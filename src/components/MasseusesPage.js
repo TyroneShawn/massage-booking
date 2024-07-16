@@ -3,21 +3,21 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const masseuses = [
-  { name: 'Stacy', description: 'Specializes in Swedish massage with over 10 years of experience.', image: 'https://placehold.co/600x400?text=Stacy' },
-  { name: 'Katya', description: 'Expert in deep tissue massage, known for her healing hands.', image: 'https://placehold.co/600x400?text=Katya' },
-  { name: 'John', description: 'Certified in sports massage, helping athletes recover faster.', image: 'https://placehold.co/600x400?text=John' },
-  { name: 'Lisa', description: 'Aromatherapy massage specialist with a gentle touch.', image: 'https://placehold.co/600x400?text=Lisa' },
-  { name: 'Michael', description: 'Renowned for his shiatsu massage techniques.', image: 'https://placehold.co/600x400?text=Michael' },
-  { name: 'Sarah', description: 'Passionate about reflexology and its benefits.', image: 'https://placehold.co/600x400?text=Sarah' },
-  { name: 'Emily', description: 'Integrates hot stone therapy for a relaxing experience.', image: 'https://placehold.co/600x400?text=Emily' },
-  { name: 'Daniel', description: 'Skilled in prenatal massage, catering to expecting mothers.', image: 'https://placehold.co/600x400?text=Daniel' },
-  { name: 'Sophia', description: 'Specializes in Thai massage, known for her calming sessions.', image: 'https://placehold.co/600x400?text=Sophia' },
-  { name: 'David', description: 'Offers therapeutic massage for chronic pain relief.', image: 'https://placehold.co/600x400?text=David' },
-  { name: 'Anna', description: 'Expert in lymphatic drainage massage.', image: 'https://placehold.co/600x400?text=Anna' },
-  { name: 'James', description: 'Combines acupuncture with massage therapy.', image: 'https://placehold.co/600x400?text=James' },
-  { name: 'Olivia', description: 'Focuses on relaxation and stress relief through massage.', image: 'https://placehold.co/600x400?text=Olivia' },
-  { name: 'Robert', description: 'Known for his effective trigger point therapy.', image: 'https://placehold.co/600x400?text=Robert' },
-  { name: 'Mia', description: 'Utilizes cupping therapy along with traditional massage.', image: 'https://placehold.co/600x400?text=Mia' },
+  { name: 'Stacy', description: 'Specializes in Swedish massage with over 10 years of experience.', image: '/img/Stacy.jpeg' },
+  { name: 'Katya', description: 'Expert in deep tissue massage, known for her healing hands.', image: '/img/Katya.png' },
+  { name: 'John', description: 'Certified in sports massage, helping athletes recover faster.', image: '/img/John.jpeg' },
+  { name: 'Lisa', description: 'Aromatherapy massage specialist with a gentle touch.', image: '/img/Lisa.jpeg' },
+  { name: 'Michael', description: 'Renowned for his shiatsu massage techniques.', image: '/img/Michael.jpeg' },
+  { name: 'Sarah', description: 'Passionate about reflexology and its benefits.', image: '/img/Sarah.jpeg' },
+  { name: 'Emily', description: 'Integrates hot stone therapy for a relaxing experience.', image: '/img/Emily.jpeg' },
+  { name: 'Daniel', description: 'Skilled in prenatal massage, catering to expecting mothers.', image: '/img/Daniel.jpeg' },
+  { name: 'Sophia', description: 'Specializes in Thai massage, known for her calming sessions.', image: '/img/Sophia.png' },
+  { name: 'David', description: 'Offers therapeutic massage for chronic pain relief.', image: '/img/David.jpeg' },
+  { name: 'Anna', description: 'Expert in lymphatic drainage massage.', image: '/img/Anna.jpeg' },
+  { name: 'James', description: 'Combines acupuncture with massage therapy.', image: '/img/James.jpeg' },
+  { name: 'Olivia', description: 'Focuses on relaxation and stress relief through massage.', image: '/img/Olivia.png' },
+  { name: 'Robert', description: 'Known for his effective trigger point therapy.', image: '/img/Robert.jpeg' },
+  { name: 'Mia', description: 'Utilizes cupping therapy along with traditional massage.', image: '/img/Mia.png' },
 ];
 
 function MasseusesPage() {
@@ -57,8 +57,8 @@ function MasseusesPage() {
       </section>
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
         {selectedMasseuses.map((masseuse, index) => (
-          <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg">
-            <img src={masseuse.image} alt={masseuse.name} className="w-full h-48 object-cover" />
+          <div key={index} className="bg-card rounded-lg overflow-hidden">
+            <img src={masseuse.image} alt={masseuse.name} className="rounded-t-lg w-full h-auto" style={{ width: '500px', height: '500px' }} />
             <div className="p-4">
               <h3 className="text-xl font-semibold">{t(masseuse.name)}</h3>
               <p className="text-muted-foreground">{t(masseuse.description)}</p>

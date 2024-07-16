@@ -6,21 +6,21 @@ import { getDay } from 'date-fns';
 import { useTranslation } from 'react-i18next';
 
 const masseuses = [
-  { name: 'Stacy', description: 'Specializes in Swedish massage with over 10 years of experience.', image: 'https://placehold.co/600x400?text=Stacy', availableDays: [1, 3, 5], availableTimes: ['10:00', '14:00'] },
-  { name: 'Katya', description: 'Expert in deep tissue massage, known for her healing hands.', image: 'https://placehold.co/600x400?text=Katya', availableDays: [2, 4], availableTimes: ['09:00', '13:00'] },
-  { name: 'John', description: 'Certified in sports massage, helping athletes recover faster.', image: 'https://placehold.co/600x400?text=John', availableDays: [1, 4], availableTimes: ['11:00', '15:00'] },
-  { name: 'Lisa', description: 'Aromatherapy massage specialist with a gentle touch.', image: 'https://placehold.co/600x400?text=Lisa', availableDays: [3, 6], availableTimes: ['12:00', '16:00'] },
-  { name: 'Michael', description: 'Renowned for his shiatsu massage techniques.', image: 'https://placehold.co/600x400?text=Michael', availableDays: [2, 5], availableTimes: ['10:00', '14:00'] },
-  { name: 'Sarah', description: 'Passionate about reflexology and its benefits.', image: 'https://placehold.co/600x400?text=Sarah', availableDays: [1, 4], availableTimes: ['09:00', '13:00'] },
-  { name: 'Emily', description: 'Integrates hot stone therapy for a relaxing experience.', image: 'https://placehold.co/600x400?text=Emily', availableDays: [3, 5], availableTimes: ['11:00', '15:00'] },
-  { name: 'Daniel', description: 'Skilled in prenatal massage, catering to expecting mothers.', image: 'https://placehold.co/600x400?text=Daniel', availableDays: [2, 6], availableTimes: ['12:00', '16:00'] },
-  { name: 'Sophia', description: 'Specializes in Thai massage, known for her calming sessions.', image: 'https://placehold.co/600x400?text=Sophia', availableDays: [1, 3], availableTimes: ['10:00', '14:00'] },
-  { name: 'David', description: 'Offers therapeutic massage for chronic pain relief.', image: 'https://placehold.co/600x400?text=David', availableDays: [2, 4, 6], availableTimes: ['19:00'] },
-  { name: 'Anna', description: 'Expert in lymphatic drainage massage.', image: 'https://placehold.co/600x400?text=Anna', availableDays: [5, 0], availableTimes: ['09:00', '13:00'] },
-  { name: 'James', description: 'Combines acupuncture with massage therapy.', image: 'https://placehold.co/600x400?text=James', availableDays: [2, 4], availableTimes: ['11:00', '15:00'] },
-  { name: 'Olivia', description: 'Focuses on relaxation and stress relief through massage.', image: 'https://placehold.co/600x400?text=Olivia', availableDays: [3, 6], availableTimes: ['12:00', '16:00'] },
-  { name: 'Robert', description: 'Known for his effective trigger point therapy.', image: 'https://placehold.co/600x400?text=Robert', availableDays: [1, 5], availableTimes: ['10:00', '14:00'] },
-  { name: 'Mia', description: 'Utilizes cupping therapy along with traditional massage.', image: 'https://placehold.co/600x400?text=Mia', availableDays: [2, 0], availableTimes: ['09:00', '13:00'] },
+  { name: 'Stacy', description: 'Specializes in Swedish massage with over 10 years of experience.', image: '/img/Stacy.jpeg', availableDays: [1, 3, 5], availableTimes: ['10:00', '14:00'] },
+  { name: 'Katya', description: 'Expert in deep tissue massage, known for her healing hands.', image: '/img/Katya.png', availableDays: [2, 4], availableTimes: ['09:00', '13:00'] },
+  { name: 'John', description: 'Certified in sports massage, helping athletes recover faster.', image: '/img/John.jpeg', availableDays: [1, 4], availableTimes: ['11:00', '15:00'] },
+  { name: 'Lisa', description: 'Aromatherapy massage specialist with a gentle touch.', image: '/img/Lisa.jpeg', availableDays: [3, 6], availableTimes: ['12:00', '16:00'] },
+  { name: 'Michael', description: 'Renowned for his shiatsu massage techniques.', image: '/img/Michael.jpeg', availableDays: [2, 5], availableTimes: ['10:00', '14:00'] },
+  { name: 'Sarah', description: 'Passionate about reflexology and its benefits.', image: '/img/Sarah.jpeg', availableDays: [1, 4], availableTimes: ['09:00', '13:00'] },
+  { name: 'Emily', description: 'Integrates hot stone therapy for a relaxing experience.', image: '/img/Emily.jpeg', availableDays: [3, 5], availableTimes: ['11:00', '15:00'] },
+  { name: 'Daniel', description: 'Skilled in prenatal massage, catering to expecting mothers.', image: '/img/Daniel.jpeg', availableDays: [2, 6], availableTimes: ['12:00', '16:00'] },
+  { name: 'Sophia', description: 'Specializes in Thai massage, known for her calming sessions.', image: '/img/Sophia.png', availableDays: [1, 3], availableTimes: ['10:00', '14:00'] },
+  { name: 'David', description: 'Offers therapeutic massage for chronic pain relief.', image: '/img/David.jpeg', availableDays: [2, 4, 6], availableTimes: ['19:00'] },
+  { name: 'Anna', description: 'Expert in lymphatic drainage massage.', image: '/img/Anna.jpeg', availableDays: [5, 0], availableTimes: ['09:00', '13:00'] },
+  { name: 'James', description: 'Combines acupuncture with massage therapy.', image: '/img/James.jpeg', availableDays: [2, 4], availableTimes: ['11:00', '15:00'] },
+  { name: 'Olivia', description: 'Focuses on relaxation and stress relief through massage.', image: '/img/Olivia.png', availableDays: [3, 6], availableTimes: ['12:00', '16:00'] },
+  { name: 'Robert', description: 'Known for his effective trigger point therapy.', image: '/img/Robert.jpeg', availableDays: [1, 5], availableTimes: ['10:00', '14:00'] },
+  { name: 'Mia', description: 'Utilizes cupping therapy along with traditional massage.', image: '/img/Mia.png', availableDays: [2, 0], availableTimes: ['09:00', '13:00'] },
 ];
 
 function BookingPage() {
@@ -174,7 +174,7 @@ function BookingPage() {
           </form>
         </div>
         <div className="w-full md:w-1/2">
-          <img src={selectedMasseuse?.image ?? "/img/swedmass.jpg"} alt="Masseuse giving a massage" className="rounded-lg shadow-lg" />
+          <img src={selectedMasseuse?.image ?? "/img/Masseuse.jpg"} alt="Masseuse giving a massage" className="rounded-t-lg w-full h-auto" style={{ width: '900px', height: '900px' }}  />
           {selectedMasseuse && (
             <div className="bg-card p-4 mt-4 rounded-lg shadow-lg">
               <h3 className="text-xl font-semibold">{selectedMasseuse.name}</h3>
