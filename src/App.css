@@ -28,6 +28,26 @@
   color: #61dafb;
 }
 
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  max-width: 1000px;
+  max-height: 800px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  max-width: 1000px;
+  max-height: 800px;
+  object-fit: cover;
+}
+
+
 
 @keyframes App-logo-spin {
   from {

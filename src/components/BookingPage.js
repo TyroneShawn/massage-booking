@@ -174,7 +174,9 @@ function BookingPage() {
           </form>
         </div>
         <div className="w-full md:w-1/2">
-          <img src={selectedMasseuse?.image ?? "/img/Masseuse.jpg"} alt="Masseuse giving a massage" className="rounded-t-lg w-full h-auto" style={{ width: '900px', height: '900px' }}  />
+          <div className="image-container">
+          <img src={selectedMasseuse?.image ?? "/img/Masseuse.jpg"} alt="Masseuse giving a massage" className="rounded-t-lg"  />
+          </div>
           {selectedMasseuse && (
             <div className="bg-card p-4 mt-4 rounded-lg shadow-lg">
               <h3 className="text-xl font-semibold">{selectedMasseuse.name}</h3>
@@ -185,6 +187,7 @@ function BookingPage() {
               <p><strong>Available Times:</strong> {selectedMasseuse.availableTimes.join(', ')}</p>
             </div>
           )}
+          
         </div>
       </main>
     </div>
