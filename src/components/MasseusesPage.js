@@ -55,10 +55,12 @@ function MasseusesPage() {
           className="mt-4 p-2 border rounded-lg w-full md:w-1/2"
         />
       </section>
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {selectedMasseuses.map((masseuse, index) => (
           <div key={index} className="bg-card rounded-lg overflow-hidden">
-            <img src={masseuse.image} alt={masseuse.name} className="rounded-t-lg w-full h-auto" style={{ width: '500px', height: '500px' }} />
+            <div className="image-container">
+            <img src={masseuse.image} alt={masseuse.name} className="rounded-t-lg" />
+            </div>
             <div className="p-4">
               <h3 className="text-xl font-semibold">{t(masseuse.name)}</h3>
               <p className="text-muted-foreground">{t(masseuse.description)}</p>
