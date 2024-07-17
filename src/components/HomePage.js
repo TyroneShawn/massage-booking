@@ -32,7 +32,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 px-8 grid grid-cols-1 md:grid-cols-5 gap-8">
+      <section className="py-16 px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
         {[
           { title: 'Swedish Massage', img: '/img/swedmass.jpg', desc: 'Swedish massage is a gentle type of full-body massage that’s ideal for people who: are new to massage, have a lot of tension, are sensitive to touch. It can help release muscle knots and it’s also a good choice for when you want to fully relax during a massage.' },
           { title: 'Aromatherapy Massage', img: '/img/Aromatherapy.jpg', desc: 'Aromatherapy massage is a full-body massage that combines massage therapy with essential oils. Aromatherapy is thought to have many benefits, including: reducing stress and anxiety, reducing muscle tension, and easing pain.' },
@@ -46,7 +46,9 @@ function HomePage() {
           { title: 'Trigger Point Massage', img: '/img/trigger.jpg', desc: 'Trigger point massage is best suited for people who have injuries, chronic pain, or a specific issue or condition. Sometimes areas of tightness in the muscle tissues, known as trigger points, can cause pain in other parts of the body.' },
         ].map((massage, index) => (
           <div key={index} className="bg-card p-4 rounded-lg shadow">
-            <img src={massage.img} alt={massage.title} className="rounded-t-lg w-full h-auto" style={{ width: '400px', height: '250px' }} />
+            <div className="image-container">
+            <img src={massage.img} alt={massage.title} className="rounded-t-lg w-full h-auto"/>
+            </div>
             <h3
               className="text-xl font-semibold mt-4 cursor-pointer hover:text-gray-500"
               onClick={() => handleMassageTypeClick(massage.title)}
