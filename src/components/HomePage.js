@@ -18,7 +18,7 @@ function HomePage() {
     <div>
       <section className="relative text-center">
         <div className="relative">
-          <img src="/img/relaxing-background-image-3.png" alt="relaxing background" className="w-full h-60 object-cover opacity-50" />
+          <img src="/img/relaxing-background-image-3.png" alt="relaxing background" className="w-full h-80 object-cover opacity-50" />
           <div className="absolute inset-0 flex flex-col justify-center items-center">
             <h1 className="text-3xl font-bold mb-4">{t('Blissful Hands Massage Studio')}</h1>
             <h2 className="text-2xl font-semibold mb-4">{t('Find rejuvenation With Our Top Rated Certified Massage Therapists')}</h2>
