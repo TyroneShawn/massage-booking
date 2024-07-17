@@ -23,9 +23,23 @@ const masseuses = [
   { name: 'Mia', description: 'Utilizes cupping therapy along with traditional massage.', image: '/img/Mia.png', availableDays: [2, 0], availableTimes: ['09:00', '13:00'] },
 ];
 
+const massageTypes = [
+  'Swedish Massage',
+  'Aromatherapy Massage',
+  'Deep Tissue Massage',
+  'Hot Stone Massage',
+  'Shiatsu Massage',
+  'Thai Massage',
+  'Prenatal Massage',
+  'Reflexology',
+  'Sports Massage',
+  'Trigger Point Massage'
+];
+
 function BookingPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedMasseuse, setSelectedMasseuse] = useState(null);
+  const [selectedMassageType, setSelectedMassageType] = useState('');
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState('');
   const [filteredMasseuses, setFilteredMasseuses] = useState(masseuses);
@@ -37,9 +51,13 @@ function BookingPage() {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const masseuseName = params.get('masseuse');
+    const massageType = params.get('massageType');
     if (masseuseName) {
       const selected = masseuses.find(masseuse => masseuse.name === masseuseName);
       setSelectedMasseuse(selected);
+    }
+    if (massageType) {
+      setSelectedMassageType(massageType);
     }
   }, [location.search]);
 
@@ -60,6 +78,10 @@ function BookingPage() {
     setSelectedMasseuse(selected);
     setSelectedDate(null);
     setSelectedTime('');
+  };
+
+  const handleMassageTypeChange = (event) => {
+    setSelectedMassageType(event.target.value);
   };
 
   const handleDateChange = (date) => {
@@ -124,6 +146,22 @@ function BookingPage() {
                   <label htmlFor={`masseuse-${index}`} className="text-sm font-medium text-muted-foreground">{masseuse.name}</label>
                 </div>
               ))}
+            </div>
+            
+            <div>
+              <label htmlFor="massageType" className="block text-sm font-medium text-muted-foreground">{t('Select Massage Type')}</label>
+              <select
+                id="massageType"
+                name="massageType"
+                value={selectedMassageType}
+                onChange={handleMassageTypeChange}
+                className="mt-1 block w-full bg-input border border-border rounded-md p-2"
+              >
+                <option value="">{t('Select Massage Type')}</option>
+                {massageTypes.map((type, index) => (
+                  <option key={index} value={type}>{type}</option>
+                ))}
+              </select>
             </div>
             <div className="flex space-x-4">
               <div className="flex-1">
