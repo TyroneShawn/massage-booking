@@ -19,7 +19,7 @@ function App() {
     <Router>
       <div className="min-h-screen bg-background text-foreground dark:bg-primary-foreground dark:text-primary">
         <nav className="bg-black dark:bg-primary text-white dark:text-primary-foreground p-4 flex justify-between items-center">
-          <Link to="/" className="text-2xl font-bold hover:text-zinc-400 dark:hover:text-primary">
+          <Link to="/" className="text-xl font-semibold hover:text-zinc-400 dark:hover:text-primary">
             {t('Blissful Hands')}
           </Link>
           <div className="space-x-4">
