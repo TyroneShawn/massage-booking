@@ -44,8 +44,7 @@ const resources = {
       "Sports massage is designed to help athletes before, during, and after training or sporting events. It can be used to promote flexibility and help prevent injuries, as well as to treat injuries such as sprains, strains, and tendonitis.": "Sports massage is designed to help athletes before, during, and after training or sporting events. It can be used to promote flexibility and help prevent injuries, as well as to treat injuries such as sprains, strains, and tendonitis.",
       "Trigger Point Massage": "Trigger Point Massage",
       "Trigger point massage is best suited for people who have injuries, chronic pain, or a specific issue or condition. Sometimes areas of tightness in the muscle tissues, known as trigger points, can cause pain in other parts of the body.": "Trigger point massage is best suited for people who have injuries, chronic pain, or a specific issue or condition. Sometimes areas of tightness in the muscle tissues, known as trigger points, can cause pain in other parts of the body.",
-      "Book Now": "Book Now"
-      // Add more translations here
+      "Book Now": "Book Now",
     }
   },
   fr: {
@@ -90,8 +89,8 @@ const resources = {
       "Sports massage is designed to help athletes before, during, and after training or sporting events. It can be used to promote flexibility and help prevent injuries, as well as to treat injuries such as sprains, strains, and tendonitis.": "Le massage sportif est conçu pour aider les athlètes avant, pendant et après l'entraînement ou les événements sportifs. Il peut être utilisé pour favoriser la flexibilité et aider à prévenir les blessures, ainsi que pour traiter les blessures telles que les entorses, les foulures et les tendinites.",
       "Trigger Point Massage": "Massage des Points Gâchettes",
       "Trigger point massage is best suited for people who have injuries, chronic pain, or a specific issue or condition. Sometimes areas of tightness in the muscle tissues, known as trigger points, can cause pain in other parts of the body.": "Le massage des points gâchettes est mieux adapté aux personnes ayant des blessures, des douleurs chroniques ou un problème ou une condition spécifique. Parfois, des zones de tension dans les tissus musculaires, appelées points gâchettes, peuvent causer de la douleur dans d'autres parties du corps.",
-      "Book Now": "Réserver Maintenant"
-      // Add more translations here
+      "Book Now": "Réserver Maintenant",
+     
     }
   }
 };

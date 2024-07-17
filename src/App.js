@@ -4,6 +4,7 @@ import HomePage from './components/HomePage';
 import MasseusesPage from './components/MasseusesPage';
 import BookingPage from './components/BookingPage';
 import ProcessingPage from './components/ProcessingPage';
+import FAQPage from './components/FAQPage';
 import { useTranslation } from 'react-i18next';
 
 function App() {
@@ -17,13 +18,14 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-background text-foreground dark:bg-primary-foreground dark:text-primary">
-        <nav className="bg-zinc-800 dark:bg-primary text-white dark:text-primary-foreground p-4 flex justify-between items-center">
+        <nav className="bg-black dark:bg-primary text-white dark:text-primary-foreground p-4 flex justify-between items-center">
           <Link to="/" className="text-2xl font-bold hover:text-zinc-400 dark:hover:text-primary">
             {t('Blissful Hands')}
           </Link>
           <div className="space-x-4">
             <Link to="/masseuses" className="hover:text-zinc-400 dark:hover:text-primary">{t('Masseuses')}</Link>
             <Link to="/booking" className="hover:text-zinc-400 dark:hover:text-primary">{t('Book')}</Link>
+            <Link to="/faq" className="hover:text-zinc-400 dark:hover:text-primary">{t('FAQ')}</Link>
             <button onClick={toggleLanguage} className="hover:text-zinc-400 dark:hover:text-primary">
               {i18n.language === 'en' ? 'FR' : 'EN'}
             </button>
@@ -34,6 +36,7 @@ function App() {
           <Route path="/masseuses" element={<MasseusesPage />} />
           <Route path="/booking" element={<BookingPage />} />
           <Route path="/processing" element={<ProcessingPage />} />
+          <Route path="/faq" element={<FAQPage />} />
         </Routes>
       </div>
     </Router>
