@@ -42,6 +42,9 @@ function BookingPage() {
   const [selectedMassageType, setSelectedMassageType] = useState('');
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
   const [filteredMasseuses, setFilteredMasseuses] = useState(masseuses);
 
   const navigate = useNavigate();
@@ -113,6 +116,10 @@ function BookingPage() {
     return !selectedMasseuse.availableDays.includes(day);
   };
 
+  const isFormValid = () => {
+    return selectedMasseuse && selectedMassageType && selectedDate && selectedTime && firstName && lastName && email;
+  };
+
   return (
     <div className="min-h-screen bg-muted text-foreground">
       <main className="flex flex-col md:flex-row items-center justify-center p-8 space-y-8 md:space-y-0 md:space-x-8">
@@ -121,7 +128,7 @@ function BookingPage() {
           <p className="text-muted-foreground mb-8">{t('Search and Select Masseuse. Book Appointment Email will be sent to you.')}</p>
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="search" className="block text-sm font-medium text-muted-foreground">{t('Search Masseuses')}</label>
+              <label htmlFor="search" className="block text-sm font-medium text-muted-foreground">{t('Search Masseuses')} *</label>
               <input
                 type="text"
                 id="search"
@@ -142,20 +149,21 @@ function BookingPage() {
                     onChange={handleMasseuseChange}
                     checked={selectedMasseuse && selectedMasseuse.name === masseuse.name}
                     className="h-4 w-4 text-primary border-gray-300 focus:ring-primary"
+                    required
                   />
                   <label htmlFor={`masseuse-${index}`} className="text-sm font-medium text-muted-foreground">{masseuse.name}</label>
                 </div>
               ))}
             </div>
-            
             <div>
-              <label htmlFor="massageType" className="block text-sm font-medium text-muted-foreground">{t('Select Massage Type')}</label>
+              <label htmlFor="massageType" className="block text-sm font-medium text-muted-foreground">{t('Select Massage Type')} *</label>
               <select
                 id="massageType"
                 name="massageType"
                 value={selectedMassageType}
                 onChange={handleMassageTypeChange}
                 className="mt-1 block w-full bg-input border border-border rounded-md p-2"
+                required
               >
                 <option value="">{t('Select Massage Type')}</option>
                 {massageTypes.map((type, index) => (
@@ -165,20 +173,20 @@ function BookingPage() {
             </div>
             <div className="flex space-x-4">
               <div className="flex-1">
-                <label htmlFor="first-name" className="block text-sm font-medium text-muted-foreground">{t('First name')}</label>
-                <input type="text" id="first-name" name="first-name" className="mt-1 block w-full bg-input border border-border rounded-md p-2" placeholder="Jane" />
+                <label htmlFor="first-name" className="block text-sm font-medium text-muted-foreground">{t('First name')} *</label>
+                <input type="text" id="first-name" name="first-name" className="mt-1 block w-full bg-input border border-border rounded-md p-2" placeholder="Jane" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
               </div>
               <div className="flex-1">
-                <label htmlFor="last-name" className="block text-sm font-medium text-muted-foreground">{t('Last name')}</label>
-                <input type="text" id="last-name" name="last-name" className="mt-1 block w-full bg-input border border-border rounded-md p-2" placeholder="Smitherton" />
+                <label htmlFor="last-name" className="block text-sm font-medium text-muted-foreground">{t('Last name')} *</label>
+                <input type="text" id="last-name" name="last-name" className="mt-1 block w-full bg-input border border-border rounded-md p-2" placeholder="Smitherton" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
               </div>
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-muted-foreground">{t('Email address')}</label>
-              <input type="email" id="email" name="email" className="mt-1 block w-full bg-input border border-border rounded-md p-2" placeholder="email@janesfakedomain.net" />
+              <label htmlFor="email" className="block text-sm font-medium text-muted-foreground">{t('Email address')} *</label>
+              <input type="email" id="email" name="email" className="mt-1 block w-full bg-input border border-border rounded-md p-2" placeholder="email@janesfakedomain.net" value={email} onChange={(e) => setEmail(e.target.value)} required />
             </div>
             <div>
-              <label htmlFor="date" className="block text-sm font-medium text-muted-foreground">{t('Select Date')}</label>
+              <label htmlFor="date" className="block text-sm font-medium text-muted-foreground">{t('Select Date')} *</label>
               <DatePicker
                 selected={selectedDate}
                 onChange={handleDateChange}
@@ -186,10 +194,11 @@ function BookingPage() {
                 minDate={new Date()}
                 className="mt-1 block w-full bg-input border border-border rounded-md p-2"
                 placeholderText={t('Select Date')}
+                required
               />
             </div>
             <div>
-              <label htmlFor="time" className="block text-sm font-medium text-muted-foreground">{t('Select Time')}</label>
+              <label htmlFor="time" className="block text-sm font-medium text-muted-foreground">{t('Select Time')} *</label>
               <select
                 id="time"
                 name="time"
@@ -197,6 +206,7 @@ function BookingPage() {
                 onChange={handleTimeChange}
                 className="mt-1 block w-full bg-input border border-border rounded-md p-2"
                 disabled={!selectedDate}
+                required
               >
                 <option value="">{t('Select Time')}</option>
                 {getAvailableTimes().map((time, index) => (
@@ -208,12 +218,18 @@ function BookingPage() {
               <label htmlFor="message" className="block text-sm font-medium text-muted-foreground">Your message</label>
               <textarea id="message" name="message" rows="4" className="mt-1 block w-full bg-input border border-border rounded-md p-2" placeholder="Enter your question or message"></textarea>
             </div>
-            <button type="submit" className="bg-primary text-primary-foreground w-full py-2 rounded-md">{t('Submit')}</button>
+            <button
+              type="submit"
+              className={`w-full py-2 rounded-md ${isFormValid() ? 'bg-black text-white hover:bg-white hover:text-black' : 'bg-gray-500 text-gray-300'}`}
+              disabled={!isFormValid()}
+            >
+              {t('Submit')}
+            </button>
           </form>
         </div>
         <div className="w-full md:w-1/2">
           <div className="image-container">
-          <img src={selectedMasseuse?.image ?? "/img/Masseuse.jpg"} alt="Masseuse giving a massage" className="rounded-t-lg"  />
+            <img src={selectedMasseuse?.image ?? "/img/Masseuse.jpg"} alt="Masseuse giving a massage" className="rounded-t-lg" />
           </div>
           {selectedMasseuse && (
             <div className="bg-card p-4 mt-4 rounded-lg shadow-lg">
@@ -225,7 +241,6 @@ function BookingPage() {
               <p><strong>Available Times:</strong> {selectedMasseuse.availableTimes.join(', ')}</p>
             </div>
           )}
-          
         </div>
       </main>
     </div>
